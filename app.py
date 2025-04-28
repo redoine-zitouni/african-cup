@@ -10,7 +10,20 @@ from config import TYPEFORM_API_CONFIG, APP_METADATA
 
 st.set_page_config(page_title=APP_METADATA.get("title"), layout="centered")
 
-st.title(APP_METADATA.get("title"))
+st.markdown("# Coupe d'Afrique des Nations à Le Blanc Mesnil")
+
+# Sous-titre venant des métadonnées
+st.markdown(f"## {APP_METADATA.get('title')}")
+
+# Petite citation centrée
+st.markdown(
+    """
+    <p style='text-align: center; font-style: italic; color: gray;'>
+    "pour nous, par nous"
+    </p>
+    """,
+    unsafe_allow_html=True
+)
 
 # Appliquer le style custom Apple-like
 with open("static/style.css") as f:
