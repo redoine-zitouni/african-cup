@@ -18,6 +18,7 @@ APP_ACCESS_TOKENS = {
     "TUNISIE842": "Tunisie",
     "MALI123": "Mali",
     "FRANCE908": "France",
+    "@dm1N+93": "All",
 }
 
 
