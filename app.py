@@ -20,6 +20,9 @@ with open("static/style.css") as f:
 
 df = get_data(config=TYPEFORM_API_CONFIG)
 
+# Retour Tilia
+st.link_button("Le Tilia", "https://letilia.org/actus/")
+
 # Input token
 token = st.text_input("🔒 Entrez votre token d'accès", type="password")
 
@@ -36,8 +39,10 @@ if token:
 
         # Jauge d'inscription
         nb_inscrits = len(participants)
-        team_size = APP_METADATA.get("team_size")
-        st.metric(label="Inscriptions", value=f"{nb_inscrits} / {team_size}")
+        if equipe == "All":
+            st.metric(label="Inscriptions", value=f"{nb_inscrits} Joueurs")
+        else:
+            st.metric(label="Inscriptions", value=f"{nb_inscrits} / {team_size}")
 
         # Tableau des participants
         if not participants.empty:
@@ -51,7 +56,5 @@ if token:
             st.info("Aucun participant inscrit pour l'instant.")
     else:
         st.error("❌ Token invalide. Vérifiez votre saisie.")
-
-    st.link_button("Le Tilia", "https://letilia.org/actus/")
 else:
     st.info("Veuillez entrer votre token pour accéder au suivi des inscriptions.")
