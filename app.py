@@ -51,5 +51,7 @@ if token:
             st.info("Aucun participant inscrit pour l'instant.")
     else:
         st.error("❌ Token invalide. Vérifiez votre saisie.")
+
+    st.link_button("Le Tilia", "https://letilia.org/actus/")
 else:
     st.info("Veuillez entrer votre token pour accéder au suivi des inscriptions.")
