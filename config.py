@@ -5,7 +5,7 @@ APP_METADATA = dict(
 )
 
 APP_ACCESS_TOKENS = {
-    "RESTEMON482": "Reste du monde",
+    "RESTEMON482": "Reste du Monde",
     "ALGERIE735": "Algérie",
     "MAROC178": "Maroc",
     "CONGOBRA392": "Congo-Brazzaville",
