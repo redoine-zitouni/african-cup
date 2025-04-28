@@ -1,6 +1,6 @@
 import requests
 import pandas as pd
-from datetime import datetime, timezone
+from datetime import datetime
 
 def get_data(config: dict) -> pd.DataFrame:
     """
@@ -28,7 +28,7 @@ def get_data(config: dict) -> pd.DataFrame:
     all_items = []
     url = base_url
 
-    today = datetime.now(timezone.utc).date()
+    update_form_date = datetime(2025,4,28).date()
 
     while url:
         resp = requests.get(url, headers=headers, params=params, verify=False)
@@ -46,15 +46,13 @@ def get_data(config: dict) -> pd.DataFrame:
 
             # Convertir submitted_at en objet datetime
             submitted_datetime = datetime.fromisoformat(submitted_at.replace("Z", "+00:00"))
-            if submitted_datetime.date() < today:
-                continue  # Ne prendre que les dates >= aujourd'hui
+            if submitted_datetime.date() < update_form_date:
+                continue  # Ne prendre que les dates récentes pour le nouveau formulaire
 
             answers = item.get("answers", [])
 
-            print(answers)
-
             # Initialiser les variables
-            nom, prenom, email, team, taille_maillot, nom_maillot, num_maillot, status = [None] * 8
+            nom, prenom, equipe, taille_maillot, nom_maillot, num_maillot, status = [None] * 7
 
             # Extraire les informations des réponses
             for answer in answers:
@@ -64,16 +62,14 @@ def get_data(config: dict) -> pd.DataFrame:
                     prenom = answer.get("text").lower().capitalize()
                 elif field_id == "UEYYQGRjcv1w":  # Nom
                     nom = answer.get("text").lower().capitalize()
-                elif field_id == "9YiWRNjOejnT":  # Email
-                    email = answer.get("email").lower()
+                elif field_id == "AiOYe71PFjOI":
+                    equipe = answer.get("choice").get("label").lower().capitalize()
                 elif field_id == "9lpvtjHLtrvk":  # Taille du maillot
                     taille_maillot = answer.get("text").upper()
                 elif field_id == "HS2DpVA1fH3L":  # Numéro du maillot
                     num_maillot = answer.get("text")
                 elif field_id == "Q3HpyFlvtfoy":  # Nom du maillot
                     nom_maillot = answer.get("text").upper()
-                elif field_id == "fNiWfQMN4WGt":  # Nom de l'équipe (multiple choice)
-                    team = answer.get("text")
                 elif field_id == "3YFgsyAdsgEH":
                     status = ", ".join(answer.get("choices").get("labels")).strip()
 
@@ -82,8 +78,7 @@ def get_data(config: dict) -> pd.DataFrame:
                 "Date": submitted_at,
                 "Nom": nom,
                 "Prenom": prenom,
-                "E-mail": email,
-                "Equipe": team,
+                "Equipe": equipe,
                 "Taille du Maillot": taille_maillot,
                 "Nom du Maillot": nom_maillot,
                 "Numero du Maillot": num_maillot,
