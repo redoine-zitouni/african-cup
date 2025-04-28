@@ -29,7 +29,10 @@ if token:
         st.success(f"Bienvenue, référent de **{equipe}** 👋")
 
         # Filtrer les participants de cette équipe
-        participants = df[df["Equipe"] == equipe]
+        if equipe == "All":
+            participants = df.copy()
+        else:
+            participants = df[df["Equipe"] == equipe]
 
         # Jauge d'inscription
         nb_inscrits = len(participants)
