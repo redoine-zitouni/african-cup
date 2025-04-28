@@ -1,0 +1,9 @@
+[server]
+headless = true
+enableCORS = false
+enableXsrfProtection = true
+showErrorDetails = false
+port = 8501  # ou laissé par défaut
+
+[theme]
+base="light"  # ou dark selon ce que tu veux
