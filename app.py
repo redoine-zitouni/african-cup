@@ -56,6 +56,8 @@ if token:
             participants = df[df["Equipe"] == equipe]
             equipe_affichee = equipe
 
+        participants.index = None
+
         # Jauge d'inscription
         nb_inscrits = len(participants)
         if equipe == "All":
