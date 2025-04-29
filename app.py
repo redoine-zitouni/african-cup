@@ -10,72 +10,79 @@ from config import TYPEFORM_API_CONFIG, APP_METADATA
 
 st.set_page_config(page_title=APP_METADATA.get("title"), layout="wide")  # Changement ici
 
-st.markdown("# Tournoi de l'Unité Africaine du Blanc Mesnil")
+# Créer des colonnes pour centrer le contenu
+left, center, right = st.columns([1, 3, 1])
 
-# Sous-titre venant des métadonnées
-st.markdown(f"## {APP_METADATA.get('title')}")
+with center:
+    # Titre principal centré
+    st.markdown(
+        "<h1 style='text-align: center;'>Tournoi de l'Unité Africaine du Blanc Mesnil</h1>",
+        unsafe_allow_html=True
+    )
 
-# Petite citation centrée
-st.markdown(
-    """
-    <p style='text-align: center; font-style: italic; color: gray;'>
-    "pour nous, par nous"
-    </p>
-    """,
-    unsafe_allow_html=True
-)
+    # Sous-titre centré venant des métadonnées
+    st.markdown(
+        f"<h2 style='text-align: center;'>{APP_METADATA.get('title')}</h2>",
+        unsafe_allow_html=True
+    )
 
-# Appliquer le style custom Apple-like
-with open("static/style.css") as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    # Petite citation centrée
+    st.markdown(
+        """
+        <p style='text-align: center; font-style: italic; color: gray;'>
+        "pour nous, par nous"
+        </p>
+        """,
+        unsafe_allow_html=True
+    )
 
-# --- Chargement des données ---
+    # Appliquer le style custom Apple-like
+    with open("static/style.css") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-df = get_data(config=TYPEFORM_API_CONFIG)
+    # --- Chargement des données ---
 
-# Retour Tilia
-st.link_button("Le Tilia", "https://letilia.org/actus/")
+    df = get_data(config=TYPEFORM_API_CONFIG)
 
-# Input token
-token = st.text_input("🔒 Entrez votre token d'accès", type="password")
+    # Retour Tilia
+    st.link_button("Le Tilia", "https://letilia.org/actus/")
 
-if token:
-    equipe = authenticate_token(token)
-    if equipe:
+    # Input token centré
+    token = st.text_input("🔒 Entrez votre token d'accès", type="password")
 
-        # Gestion du cas "All" avec sélection d'équipe
-        if equipe == "All":
-            st.success(f"Bienvenue, cher administrateur 👋")
-            
-            equipes_disponibles = df["Equipe"].dropna().unique()
-            equipe_selectionnee = st.selectbox("Choisissez une équipe à visualiser :", sorted(equipes_disponibles))
-            participants = df[df["Equipe"] == equipe_selectionnee]
-            equipe_affichee = equipe_selectionnee
-        else:
-            st.success(f"Bienvenue, référent de **{equipe}** 👋")
-            participants = df[df["Equipe"] == equipe]
-            equipe_affichee = equipe
+    if token:
+        equipe = authenticate_token(token)
+        if equipe:
 
-        participants = participants.reset_index(drop=True)
+            # Gestion du cas "All" avec sélection d'équipe
+            if equipe == "All":
+                st.success(f"Bienvenue, cher administrateur 👋")
+                
+                equipes_disponibles = df["Equipe"].dropna().unique()
+                equipe_selectionnee = st.selectbox("Choisissez une équipe à visualiser :", sorted(equipes_disponibles))
+                participants = df[df["Equipe"] == equipe_selectionnee]
+                equipe_affichee = equipe_selectionnee
+            else:
+                st.success(f"Bienvenue, référent de **{equipe}** 👋")
+                participants = df[df["Equipe"] == equipe]
+                equipe_affichee = equipe
 
-        # Jauge d'inscription
-        nb_inscrits = len(participants)
-        if equipe == "All":
-            st.metric(label="Inscriptions", value=f"{nb_inscrits} / 144")
-        else:
-            st.metric(label="Inscriptions", value=f"{nb_inscrits} / {team_size}")
+            participants = participants.reset_index(drop=True)
 
-        # Tableau des participants, centré
-        if not participants.empty:
-            st.subheader(f"👥 Liste des Participants - Équipe {equipe_affichee}")
-            
-            # Centrage via colonnes
-            left, center, right = st.columns([1, 4, 1])
-            with center:
+            # Jauge d'inscription
+            nb_inscrits = len(participants)
+            if equipe == "All":
+                st.metric(label="Inscriptions", value=f"{nb_inscrits} / 144")
+            else:
+                st.metric(label="Inscriptions", value=f"{nb_inscrits} / {team_size}")
+
+            # Tableau des participants, centré
+            if not participants.empty:
+                st.subheader(f"👥 Liste des Participants - Équipe {equipe_affichee}")
                 st.dataframe(participants, use_container_width=True, hide_index=True)
+            else:
+                st.info("Aucun participant inscrit pour l'instant.")
         else:
-            st.info("Aucun participant inscrit pour l'instant.")
+            st.error("❌ Token invalide. Vérifiez votre saisie.")
     else:
-        st.error("❌ Token invalide. Vérifiez votre saisie.")
-else:
-    st.info("Veuillez entrer votre token pour accéder au suivi des inscriptions.")
+        st.info("Veuillez entrer votre token pour accéder au suivi des inscriptions.")
