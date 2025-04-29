@@ -66,11 +66,7 @@ if token:
         # Tableau des participants
         if not participants.empty:
             st.subheader(f"👥 Liste des Participants - Équipe {equipe_affichee}")
-            st.dataframe(
-                participants,
-                use_container_width=True,
-                hide_index=True
-            )
+            st.table(participants)
         else:
             st.info("Aucun participant inscrit pour l'instant.")
     else:
