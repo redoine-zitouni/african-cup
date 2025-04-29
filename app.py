@@ -10,7 +10,7 @@ from config import TYPEFORM_API_CONFIG, APP_METADATA
 
 st.set_page_config(page_title=APP_METADATA.get("title"), layout="centered")
 
-st.markdown("# Coupe d'Afrique des Nations à Le Blanc Mesnil")
+st.markdown("# Tournoi de l'Unité Africaine du Blanc Mesnil")
 
 # Sous-titre venant des métadonnées
 st.markdown(f"## {APP_METADATA.get('title')}")
@@ -44,22 +44,26 @@ if token:
     if equipe:
         st.success(f"Bienvenue, référent de **{equipe}** 👋")
 
-        # Filtrer les participants de cette équipe
+        # Gestion du cas "All" avec sélection d'équipe
         if equipe == "All":
-            participants = df.copy()
+            equipes_disponibles = df["Equipe"].dropna().unique()
+            equipe_selectionnee = st.selectbox("Choisissez une équipe à visualiser :", sorted(equipes_disponibles))
+            participants = df[df["Equipe"] == equipe_selectionnee]
+            equipe_affichee = equipe_selectionnee
         else:
             participants = df[df["Equipe"] == equipe]
+            equipe_affichee = equipe
 
         # Jauge d'inscription
         nb_inscrits = len(participants)
         if equipe == "All":
-            st.metric(label="Inscriptions", value=f"{nb_inscrits} Joueurs")
+            st.metric(label="Inscriptions", value=f"{nb_inscrits} / 144")
         else:
             st.metric(label="Inscriptions", value=f"{nb_inscrits} / {team_size}")
 
         # Tableau des participants
         if not participants.empty:
-            st.subheader("👥 Liste des Participants")
+            st.subheader(f"👥 Liste des Participants - Équipe {equipe_affichee}")
             st.dataframe(
                 participants,
                 use_container_width=True,
