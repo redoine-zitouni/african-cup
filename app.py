@@ -42,15 +42,17 @@ token = st.text_input("🔒 Entrez votre token d'accès", type="password")
 if token:
     equipe = authenticate_token(token)
     if equipe:
-        st.success(f"Bienvenue, référent de **{equipe}** 👋")
 
         # Gestion du cas "All" avec sélection d'équipe
         if equipe == "All":
+            st.success(f"Bienvenue à toi, cher administrateur 👋")
+            
             equipes_disponibles = df["Equipe"].dropna().unique()
             equipe_selectionnee = st.selectbox("Choisissez une équipe à visualiser :", sorted(equipes_disponibles))
             participants = df[df["Equipe"] == equipe_selectionnee]
             equipe_affichee = equipe_selectionnee
         else:
+            st.success(f"Bienvenue, référent de **{equipe}** 👋")
             participants = df[df["Equipe"] == equipe]
             equipe_affichee = equipe
 
