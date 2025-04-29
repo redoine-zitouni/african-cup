@@ -71,10 +71,8 @@ with center:
 
             # Jauge d'inscription
             nb_inscrits = len(participants)
-            if equipe == "All":
-                st.metric(label="Inscriptions", value=f"{nb_inscrits} / 144")
-            else:
-                st.metric(label="Inscriptions", value=f"{nb_inscrits} / {team_size}")
+            team_size = APP_METADATA.get("team_size")
+            st.metric(label="Inscriptions", value=f"{nb_inscrits} / {team_size}")
 
             # Tableau des participants, centré
             if not participants.empty:
