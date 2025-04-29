@@ -8,7 +8,7 @@ from config import TYPEFORM_API_CONFIG, APP_METADATA
 
 # --- Début de l'interface Streamlit ---
 
-st.set_page_config(page_title=APP_METADATA.get("title"), layout="centered")
+st.set_page_config(page_title=APP_METADATA.get("title"), layout="wide")  # Changement ici
 
 st.markdown("# Tournoi de l'Unité Africaine du Blanc Mesnil")
 
@@ -65,10 +65,14 @@ if token:
         else:
             st.metric(label="Inscriptions", value=f"{nb_inscrits} / {team_size}")
 
-        # Tableau des participants
+        # Tableau des participants, centré
         if not participants.empty:
             st.subheader(f"👥 Liste des Participants - Équipe {equipe_affichee}")
-            st.table(participants)
+            
+            # Centrage via colonnes
+            left, center, right = st.columns([1, 4, 1])
+            with center:
+                st.dataframe(participants, use_container_width=True, hide_index=True)
         else:
             st.info("Aucun participant inscrit pour l'instant.")
     else:
