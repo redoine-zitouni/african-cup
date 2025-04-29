@@ -45,7 +45,7 @@ if token:
 
         # Gestion du cas "All" avec sélection d'équipe
         if equipe == "All":
-            st.success(f"Bienvenue à toi, cher administrateur 👋")
+            st.success(f"Bienvenue, cher administrateur 👋")
             
             equipes_disponibles = df["Equipe"].dropna().unique()
             equipe_selectionnee = st.selectbox("Choisissez une équipe à visualiser :", sorted(equipes_disponibles))
