@@ -1,42 +1,40 @@
-Date;Nom;Prenom;Equipe;Taille du Maillot;Nom du Maillot;Numero du Maillot;Status
-2025-04-23 21:47:11;kln;chris;Reste du Monde;M;KLN;10;Joueur
-2025-04-22 18:24:18;Benhamma;Marwane;Algérie;M;BENHAMMA;10;Joueur
-2025-04-22 17:15:16;Bah;JR;Reste du Monde;M;JR.BAH;23;Joueur
-2025-04-21 17:49:10;Beyoute;Youssef;Maroc;S;Youssef;19;Joueur
-2025-04-19 11:48:17;Rouger;Yann;Congo Brazzaville;M;Yann;10;Joueur
-2025-04-19 11:41:57;Touré;Mohamed;Sénégal;S;Momo Touré;7;Joueur
-2025-04-19 11:19:33;Fortes;Claudio;Reste du Monde;XL;Claudio;7;Joueur
-2025-04-17 20:46:53;Hamzaoui;JAJA;Maroc;L;Jaja;7;Joueur
-2025-04-17 18:18:13;Dos Anjos;Ricardo;Reste du Monde;M;Ricardo;24;Joueur
-2025-04-17 15:56:11;Gravillon;Wes-sley;Outremer;L;Ti wess;97;Joueur
-2025-04-17 15:51:09;Yaffa;Issa;Sénégal;4XL;Bayaf;9;Coach, 
-2025-04-17 15:33:09;Kebbab;Yanis;Algérie;L;Yanis;2;Joueur
-2025-04-17 10:42:46;Bidjou;Yanis;Algérie;S;Yanis .B;47;Joueur
-2025-04-16 22:46:22;Sefsaf;Yanis;Reste du Monde;L;Sefsaf;29;Joueur, Challenge
-2025-04-16 17:44:12;Ibrahim;Rachid;Reste du Monde;L;IBRAHIM;93;Joueur, Challenge
-2025-04-16 14:26:27;Keddou;Yacine;Algérie;M;Latouffe;47;Joueur
-2025-04-16 13:37:28;Ikhenfer;Ahmed;Algérie;S;Le Hamz;21;Coach, Joueur
-2025-04-16 13:33:48;Quehan;Mehdi;Algérie;M;Quehan;17;Joueur
-2025-04-16 13:19:47;Moumene;Sofiane;Algérie;M;Sofiane;5;Joueur
-2025-04-16 13:01:55;Dieye;Moussa.D;Algérie;m;M.D.Moussa;23;Joueur
-2025-04-16 13:00:44;Sellami;Mohamed;Algérie;M;Mims;8;Joueur
-2025-04-16 13:03:39;Bouchemal;Sofiane;Algérie;M;Bouchemal;10;Joueur
-2025-04-15 21:18:44;Chery;Johnley;Haïti;M;Chery;14 ou 15;Joueur
-2025-04-15 16:49:46;Hermilus;Carlo;Haïti;M;CRL;24;Joueur
-2025-04-15 16:37:58;Sidney;Kevin;Haïti;M;SIDNEY;17;Joueur, Challenge
-2025-04-15 16:05:12;Labady;Junior;Haïti;S;Labady;3;Joueur
-2025-04-15 12:58:50;Joie De Vivre;Mr La;Haïti;XL;Mr La Joie De Vivre;99;Joueur
-2025-04-11 20:02:30;WORLD 🌍🥷🏾;BISON;Haïti;M;Bison;47;Joueur
-2025-04-09 17:13:10;Joseph;Olivier;Haïti;Xxxl;Buch;5;Joueur
-2025-04-09 13:38:05;Krichah;Mohamed;Tunisie;Xl;Moha;23;Coach, 
-2025-04-08 12:10:55;Albertus;Wendy;Haïti;L;W;93;Joueur
-2025-04-06 21:20:22;CASTOR;Yvenord;Haïti;S;NORVY;7;Joueur
-2025-04-06 20:29:42;Castor;Yvenel;Haïti;4XL;BiGorNo;75;Joueur, Challenge
-2025-04-06 17:43:59;Guerbe;Enzo;Reste du Monde;L;D7;93;Joueur
-2025-04-06 16:47:29;Bouzy;Jumo;Haïti;L;Jumo;2;Joueur
-2025-04-04 16:27:31;Sayem;Mohamed;Maroc;S;Labolé;11;Joueur
-2025-04-02 18:44:54;Mekahli;Zinedin;Algérie;L;Ziné;1;Joueur, Challenge
-2025-03-20 19:39:09;Seddiki;Yacine;Maroc;L;Yacine;4;Joueur
-2025-03-20 19:17:34;Belrbi;Melka93🇩🇿;Algérie;S;Melka 93;93;Joueur
-2025-03-20 14:56:59;Beyoute;Youssef;Maroc;S;Beyoute;19;Joueur
-2025-03-19 12:05:44;Tall;Abou;Sénégal;M;Tall;4;Coach, 
+Date;Nom;Prenom;Equipe;Taille du Maillot;Nom du Maillot;Numero du Maillot;Status;Ville et quartier de résidence ou d'origine
+2025-04-23 21:47:11;Kln;Chris;Reste du Monde;M;KLN;10;Joueur;montfermeil
+2025-04-22 18:24:18;Benhamma;Marwane;Algérie;M;BENHAMMA;10;Joueur;Sarcelles
+2025-04-22 17:15:16;Bah;JR;Reste du Monde;M;JR.BAH;23;Joueur;Le Blanc-Mesnil
+2025-04-21 17:49:10;Beyoute;Youssef;Maroc;S;Youssef;19;Joueur;Aulnay-sous-Bois
+2025-04-19 11:48:17;Rouger;Yann;Congo Brazzaville;M;Yann;10;Joueur;Le blanc mesnil
+2025-04-19 11:41:57;Touré;Mohamed;Sénégal;S;Momo Touré;7;Joueur;Blanc mesnil : Tilleuls
+2025-04-19 11:19:33;Fortes;Claudio;Reste du Monde;XL;Claudio;7;Joueur;Blanc mesnil
+2025-04-17 20:46:53;Hamzaoui;Jamel;Maroc;L;Jaja;7;Joueur;Blanc-Mesnil
+2025-04-17 18:18:13;Dos Anjos;Ricardo;Reste du Monde;M;Ricardo;24;Joueur;Blanc mesnil
+2025-04-17 15:56:11;Gravillon;Wes-sley;Outremer;L;Ti wess;97;Joueur;Garges
+2025-04-17 15:33:09;Kebbab;Yanis;Algérie;L;Yanis;2;Joueur;Drancy
+2025-04-17 10:42:46;Bidjou;Yanis;Algérie;S;Yanis .B;47;Joueur;Blanc mesnil tilleuls
+2025-04-16 22:46:22;Sefsaf;Yanis;Reste du Monde;L;Sefsaf;29;Joueur, Challenge;Tilleuls
+2025-04-16 17:44:12;Ibrahim;Rachid;Reste du Monde;L;IBRAHIM;93;Joueur, Challenge;Blanc Mesnil - Tilleuls
+2025-04-16 14:26:27;Keddou;Yacine;Algérie;M;Latouffe;47;Joueur;Villepinte
+2025-04-16 13:37:28;Ikhenfer;Ahmed;Algérie;S;Le Hamz;21;Coach, Joueur;Blanc mesnil tilleuls
+2025-04-16 13:33:48;Quehan;Mehdi;Algérie;M;Quehan;17;Joueur;Drancy
+2025-04-16 13:19:47;Moumene;Sofiane;Algérie;M;Sofiane;5;Joueur;Blanc-Mesnil les tilleuls
+2025-04-16 13:01:55;Dieye;Moussa.D;Algérie;m;M.D.Moussa;23;Joueur;212
+2025-04-16 13:00:44;Sellami;Mohamed;Algérie;M;Mims;8;Joueur;Blanc mesnil
+2025-04-16 13:03:39;Bouchemal;Sofiane;Algérie;M;Bouchemal;10;Joueur;Le blanc mesnil
+2025-04-15 21:18:44;Chery;Johnley;Haïti;M;Chery;14 ou 15;Joueur;Paris
+2025-04-15 16:49:46;Hermilus;Carlo;Haïti;M;CRL;24;Joueur;Drancy La Mare
+2025-04-15 16:37:58;Sidney;Kevin;Haïti;M;SIDNEY;17;Joueur, Challenge;Le Blanc Mesnil - Pasteur
+2025-04-15 16:05:12;Labady;Junior;Haïti;S;Labady;3;Joueur;2 allé souflot le blanc mesnil
+2025-04-15 12:58:50;Joie De Vivre;Mr La;Haïti;XL;Mr La Joie De Vivre;99;Joueur;Bagneux
+2025-04-11 20:02:30;Wolrd;Bison;Haïti;M;Bison;47;Joueur;Sevran
+2025-04-09 17:13:10;Joseph;Olivier;Haïti;Xxxl;Buch;5;Joueur;Haiti
+2025-04-09 13:38:05;Krichah;Mohamed;Tunisie;Xl;Moha;23;Coach, ;Tilleuls
+2025-04-08 12:10:55;Albertus;Wendy;Haïti;L;W;93;Joueur;Noisy
+2025-04-06 21:20:22;CASTOR;Yvenord;Haïti;S;NORVY;7;Joueur;Blanc mesnil
+2025-04-06 20:29:42;Castor;Yvenel;Haïti;4XL;BiGorNo;75;Joueur, Challenge;Le Blanc-Mesnil
+2025-04-06 17:43:59;Guerbe;Enzo;Reste du Monde;L;D7;93;Joueur;Blanc mesnil
+2025-04-06 16:47:29;Bouzy;Jumo;Haïti;L;Jumo;2;Joueur;Tilleuls
+2025-04-04 16:27:31;Sayem;Mohamed;Maroc;S;Labolé;11;Joueur;Le blanc mesnil
+2025-04-02 18:44:54;Mekahli;Zinedin;Algérie;L;Ziné;1;Joueur, Challenge;Tilleuls
+2025-03-20 19:39:09;Seddiki;Yacine;Maroc;L;Yacine;4;Joueur;Montillet - blanc Mesnil sud
+2025-03-20 19:17:34;Belrbi;Kamel;Algérie;S;Melka 93;93;Joueur;Cité Victor Hugo
+2025-03-20 14:56:59;Beyoute;Youssef;Maroc;S;Beyoute;19;Joueur;Aulnay-sous-Bois
