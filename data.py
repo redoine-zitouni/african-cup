@@ -61,19 +61,21 @@ def get_data(config: dict) -> pd.DataFrame:
                 field_id = answer.get("field", {}).get("id")
 
                 if field_id == "mJSz2MX7ZzXy":  # Prénom
-                    prenom = answer.get("text").lower().capitalize()
+                    prenom = answer.get("text").lower().capitalize().strip()
                 elif field_id == "UEYYQGRjcv1w":  # Nom
-                    nom = answer.get("text").lower().capitalize()
+                    nom = answer.get("text").lower().capitalize().strip()
                 elif field_id == "AiOYe71PFjOI":
-                    equipe = answer.get("choice").get("label").lower().capitalize()
+                    equipe = answer.get("choice").get("label").lower().capitalize().strip()
                 elif field_id == "9lpvtjHLtrvk":  # Taille du maillot
-                    taille_maillot = answer.get("text").upper()
+                    taille_maillot = answer.get("text").upper().strip()
                 elif field_id == "HS2DpVA1fH3L":  # Numéro du maillot
-                    num_maillot = answer.get("text")
+                    num_maillot = answer.get("text").strip()
                 elif field_id == "Q3HpyFlvtfoy":  # Nom du maillot
-                    nom_maillot = answer.get("text").upper()
+                    nom_maillot = answer.get("text").upper().strip()
                 elif field_id == "3YFgsyAdsgEH":
                     status = ", ".join(answer.get("choices").get("labels")).strip()
+                elif field_id == "1SQ5ILcG7Lj6":
+                    provenance = answer.get("text").strip()
 
             # Ajouter l'item au tableau de résultats
             all_items.append({
@@ -85,6 +87,7 @@ def get_data(config: dict) -> pd.DataFrame:
                 "Nom du Maillot": nom_maillot,
                 "Numero du Maillot": num_maillot,
                 "Status": status,
+                "Provenance": provenance,
             })
 
         # Vérifier si la réponse contient un lien vers la page suivante
