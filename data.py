@@ -95,7 +95,7 @@ def get_data(config: dict) -> pd.DataFrame:
 
     df = pd.concat([base_data, df], ignore_index=True, axis=0)
 
-    if not df.empty:
-        df = df.sort_values(by="Date", ascending=False)
+    df = df.sort_values(by="Date", ascending=False)
+    df = df[df["Status"] != "Challenge"]
 
     return df
