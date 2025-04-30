@@ -51,6 +51,8 @@ def get_data(config: dict) -> pd.DataFrame:
 
             answers = item.get("answers", [])
 
+            print(answers)
+
             # Initialiser les variables
             nom, prenom, equipe, taille_maillot, nom_maillot, num_maillot, status = [None] * 7
 
