@@ -4,7 +4,7 @@ import streamlit as st
 import pandas as pd
 from auth import authenticate_token
 from data import get_data
-from config import TYPEFORM_API_CONFIG, APP_METADATA, APP_ACCESS_TOKEN
+from config import TYPEFORM_API_CONFIG, APP_METADATA, APP_ACCESS_TOKENS
 
 # --- Début de l'interface Streamlit ---
 
@@ -58,7 +58,7 @@ with center:
             if equipe == "All":
                 st.success(f"Bienvenue, cher administrateur 👋")
                 
-                equipes_disponibles = [eq for eq in APP_ACCESS_TOKEN.values() if eq != "All"]
+                equipes_disponibles = [eq for eq in APP_ACCESS_TOKENS.values() if eq != "All"]
                 equipe_selectionnee = st.selectbox("Choisissez une équipe à visualiser :", sorted(equipes_disponibles))
                 participants = df[df["Equipe"] == equipe_selectionnee]
                 equipe_affichee = equipe_selectionnee
