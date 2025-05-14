@@ -76,12 +76,18 @@ def get_data(config: dict) -> pd.DataFrame:
                     status = ", ".join(answer.get("choices").get("labels")).strip()
                 elif field_id == "1SQ5ILcG7Lj6":
                     provenance = answer.get("text").strip()
+                elif field_id == "9YiWRNjOejnT":
+                    email = answer.get("email").strip()
+                elif field_id == "5s8tbGTjMsOP":
+                    phone_number = answer.get("phone_number").strip()
 
             # Ajouter l'item au tableau de résultats
             all_items.append({
                 "Date": submitted_at,
                 "Nom": nom,
                 "Prenom": prenom,
+                "E-mail": email,
+                "Tel.": phone_number,
                 "Equipe": equipe,
                 "Taille du Maillot": taille_maillot,
                 "Nom du Maillot": nom_maillot,
