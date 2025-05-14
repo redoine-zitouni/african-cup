@@ -65,7 +65,7 @@ def get_data(config: dict) -> pd.DataFrame:
                 elif field_id == "UEYYQGRjcv1w":  # Nom
                     nom = answer.get("text").lower().capitalize().strip()
                 elif field_id == "AiOYe71PFjOI":
-                    equipe = answer.get("choice").get("label").lower().capitalize().strip()
+                    equipe = answer.get("choice").get("label").strip()
                 elif field_id == "9lpvtjHLtrvk":  # Taille du maillot
                     taille_maillot = answer.get("text").upper().strip()
                 elif field_id == "HS2DpVA1fH3L":  # Numéro du maillot
