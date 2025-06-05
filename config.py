@@ -1,7 +1,7 @@
 import os
 APP_METADATA = dict(
     title = "Suivi des Inscriptions",
-    team_size = 12,
+    team_size = 13,
 )
 
 APP_ACCESS_TOKENS = {
