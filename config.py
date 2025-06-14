@@ -11,7 +11,7 @@ APP_ACCESS_TOKENS = {
     "CONGOBRA392": "Congo Brazzaville",
     "CONGOKIN931": "Congo Kinshasa",
     "CAMEROUN1313": "Cameroun",
-    "COTEIVOIRE452": "Côte D'Ivoire",
+    "COTEIVOIRE452": "Côte d'Ivoire",
     "SENEGAL601": "Sénégal",
     "OUTREMER249": "Outremer",
     "HAITI537": "Haïti",
